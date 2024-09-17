@@ -1,2 +1,3 @@
-# ai-chess
-Using RL to play chess
+# chess game analysis
+
+![](icon/chess_game.gif)
