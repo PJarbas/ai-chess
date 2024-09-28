@@ -11,6 +11,7 @@ if __name__ == "__main__":
     info, moves = chess_data.run(f)
     
     print(info)
+    print(moves)
     
     gif_generator = ChessGifGenerator()
     gif_generator.create_gif(pgn_string=moves, gif_path='chess_game.gif')
