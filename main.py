@@ -1,19 +1,16 @@
-# https://github.com/iamlucaswolf/gym-chess
-# pip install gym-chess 
+from gif_generator import ChessGifGenerator
+from chess_data import ChessData
 
-import gym
-import gym_chess
-import random
 
-env = gym.make('Chess-v0')
-print(env.render())
-
-env.reset()
-done = False
-
-while not done:
-    action = random.sample(env.legal_moves)
-    env.step(action)
-    print(env.render(mode='unicode'))
-
-env.close()
+if __name__ == "__main__":
+    
+    chess_data = ChessData()
+    
+    f = "Alexander-Alekhine_vs_Lupi-Francesco_1946.pgn"
+    
+    info, moves = chess_data.run(f)
+    
+    print(info)
+    
+    gif_generator = ChessGifGenerator()
+    gif_generator.create_gif(pgn_string=moves, gif_path='chess_game.gif')
